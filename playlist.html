@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre Espol - Playlists</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://i.ibb.co/9q8hDNs/pre-espol-icon.png">
+    
+</head>
+<body>
+    <header>
+        <h1>Playlists</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="playlist.html">Playlist</a></li>
+                <li><a href="libro.html">Libro</a></li>
+                <li><a href="examenes.html">Examenes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Playlists</h1>
+        <div class="video-section">
+            <h2>pre espol - matemáticas</h2>
+            <button class="playlist-btn" onclick="openPlaylist('https://www.youtube.com/embed/videoseries?list=PLLv_lw1Qa7u0Fbx4h_O8tWcMgcqyK7YtA')">Ver Playlist</button>
+        </div>
+        <div class="video-section">
+            <h2>pre espol - física</h2>
+            <button class="playlist-btn" onclick="openPlaylist('https://www.youtube.com/embed/videoseries?list=PLEJG0skuW2IC44kLQJy_WYI5XG_k9sm9V')">Ver Playlist</button>
+        </div>
+        <div class="video-section">
+            <h2>pre espol - química</h2>
+            <button class="playlist-btn" onclick="openPlaylist('https://www.youtube.com/embed/videoseries?list=PLLv_lw1Qa7u2mc2grGAF4H3R26VDqItMO')">Ver Playlist</button>
+        </div>
+        <div id="player-container"></div>
+    </div>
+
+    <script>
+        function openPlaylist(playlistURL) {
+            document.getElementById("player-container").innerHTML = '<iframe width="560" height="400" src="' + playlistURL + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        }
+    </script>
+</body>
+</html>

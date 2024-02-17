@@ -1,0 +1,92 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #599459; /* color celeste oscuro */
+}
+
+.video-section {
+    display: inline-block;
+    margin: 20px;
+}
+
+.playlist-btn {
+    padding: 10px 20px;
+    background-color: #599459; /* color celeste oscuro */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.playlist-btn:hover {
+    background-color: #4682b4; /* color celeste más claro */
+}
+
+header {
+    background-color: #2d572c;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 1px; /* Ajustando el tamaño del encabezado */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px; /* Ajustando el tamaño de las palabras del menú */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.containers {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.book-section {
+    margin-top: 20px;
+}
+
+.book-btn {
+    padding: 10px 20px;
+    background-color: #599459;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px; /* Añadimos un margen derecho para separar los botones */
+}
+
+.book-btn:last-child {
+    margin-right: 0; /* Quitamos el margen derecho al último botón */
+}
+
+.book-btn:hover {
+    background-color: #4682b4;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre Espol - Libro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://i.ibb.co/9q8hDNs/pre-espol-icon.png">
+    <style>
+        /* Estilos CSS para la ventana emergente */
+        .popup {
+            width: 800px;
+            height: 600px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: scroll;
+            background-color: white;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pre Espol - Libro</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="playlist.html">Playlist</a></li>
+            <li><a href="libro.html">Libro</a></li>
+            <li><a href="examenes.html">Examenes</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="containers">
+    <h2>Libros de Matemáticas</h2>
+    <div class="book-section">
+        <h3>Fundamentos de Matemáticas Para Bachillerato</h3>
+        <button class="book-btn" onclick="openBook('https://www.dropbox.com/scl/fi/aybyo8ihsu9xlvxzaym1c/FUNDAMENTO-MATEMATICAS-1.pdf?rlkey=pmlkaxyeqqkeh4at0m1uekpnl&dl=0')">Abrir libro I</button>
+        <button class="book-btn" onclick="openBook('https://www.dropbox.com/scl/fi/vji0pf0kpp4273rcj2s8k/FUNDAMENTOS-MATEMATICAS-2.pdf?rlkey=f7j69oqn4v51vzz8fn7l8vo7h&dl=0')">Abrir Libro II</button>
+    </div>
+</div>
+
+<div class="containers">
+    <h2>Libros de Física</h2>
+    <div class="book-section">
+        <h3>Física</h3>
+        <button class="book-btn" onclick="openBook('https://www.dropbox.com/scl/fi/y5uo6w89gkkpnnej3d6nj/Fisica-Bolivar-Flores.pdf?rlkey=bsrx1au5hynozzwivpzbrqdlo&dl=0')">Abrir libro</button>
+    </div>
+</div>
+
+<div class="containers">
+    <h2>Libros de Quimica</h2>
+    <div class="book-section">
+        <h3>Quimica</h3>
+        <button class="book-btn" onclick="openBook('https://archive.org/details/FundamentosDeQumicaRalphA.Burns5taEdiciin/mode/2up?view=theater')">Abrir libro</button>
+        <button class="book-btn" onclick="openBook('https://www.dropbox.com/scl/fi/8dv7ef5henfge2rmu5lwa/Quimica_La-Ciencia-Central.pdf?rlkey=s4spmd478r4ezarionvnlysig&dl=0')">Abrir Libro</button>
+    </div>
+</div>
+
+<script>
+    function openBook(bookURL) {
+        // Abre una ventana emergente en la misma página
+        var popup = window.open(bookURL, 'popup', 'width=800,height=600');
+    }
+</script>
+
+</body>
+</html>
