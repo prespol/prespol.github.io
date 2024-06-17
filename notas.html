@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Notas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Notas</h1>
+        <div class="form-group">
+            <label for="leccionGeneral">Lección General (20%)</label>
+            <input type="number" id="leccionGeneral" min="0" max="100">
+        </div>
+        <div class="form-group">
+            <label for="tareas">Tareas (5%)</label>
+            <input type="number" id="tareas" min="0" max="100">
+        </div>
+        <div class="form-group">
+            <label for="taller">Taller (10%)</label>
+            <input type="number" id="taller" min="0" max="100">
+        </div>
+        <div class="form-group">
+            <label for="pruebasSalida">Pruebas de Salida (10%)</label>
+            <input type="number" id="pruebasSalida" min="0" max="100">
+        </div>
+        <div class="form-group">
+            <label for="examenFinal">Examen Final (50%)</label>
+            <input type="number" id="examenFinal" min="0" max="100">
+        </div>
+        <div class="form-group">
+            <label for="examenMejoramiento">Examen de Mejoramiento</label>
+            <input type="number" id="examenMejoramiento" min="0" max="100">
+        </div>
+        <button onclick="calcularNotaFinal()">Calcular Nota Final</button>
+        <div class="result" id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularNotaFinal() {
+            let leccionGeneral = parseFloat(document.getElementById('leccionGeneral').value);
+            let tareas = parseFloat(document.getElementById('tareas').value);
+            let taller = parseFloat(document.getElementById('taller').value);
+            let pruebasSalida = parseFloat(document.getElementById('pruebasSalida').value);
+            let examenFinal = parseFloat(document.getElementById('examenFinal').value);
+            let examenMejoramiento = parseFloat(document.getElementById('examenMejoramiento').value);
+
+            // Reemplazar lección general y examen final si el examen de mejoramiento es mayor
+            if (examenMejoramiento > leccionGeneral) {
+                leccionGeneral = examenMejoramiento;
+            }
+
+            if (examenMejoramiento > examenFinal) {
+                examenFinal = examenMejoramiento;
+            }
+
+            let notaFinal = (leccionGeneral * 0.20) + (tareas * 0.05) + (taller * 0.10) + (pruebasSalida * 0.10) + (examenFinal * 0.50);
+
+            document.getElementById('resultado').innerText = 'Tu nota final es: ' + notaFinal.toFixed(2);
+        }
+    </script>
+</body>
+</html>
