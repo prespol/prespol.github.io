@@ -29,6 +29,21 @@
             margin-bottom: 20px;
         }
 
+        #play-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #61dafb;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #play-button:hover {
+            background-color: #21a1f1;
+        }
+
         #audio {
             display: none;
         }
@@ -38,10 +53,11 @@
     <div>
         <h1>Tiempo restante hasta el 1 de julio en horario ecuatoriano:</h1>
         <div id="countdown"></div>
+        <button id="play-button">Reproducir Audio</button>
     </div>
 
     <audio id="audio" loop>
-        <source src="Contador de 20 segundos con la música épica de Grefg + parte épica musica.mp3" type="audio/mpeg">
+        <source src="Contador de 20 segundos con la música épica de Grefg + parte épica musica.mp3"" type="audio/mpeg">
         Tu navegador no soporta el elemento de audio.
     </audio>
 
@@ -72,9 +88,13 @@
         // Update the countdown every second
         setInterval(updateCountdown, 1000);
 
-        // Play audio
-        const audio = document.getElementById('audio');
-        audio.play();
+        // Play audio on button click
+        document.getElementById('play-button').addEventListener('click', () => {
+            const audio = document.getElementById('audio');
+            audio.play().catch(error => {
+                console.error("Playback failed: ", error);
+            });
+        });
     </script>
 </body>
 </html>
